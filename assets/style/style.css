@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+    --bg-body : hsl(275, 100%, 97%);
+    --bg-card-main: hsl(0, 0%, 100%);
+    --bg-scroll: hsl(292, 16%, 49%);
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    background-image: url('/assets/images/background-pattern-desktop.svg');
+    background-color: var(--bg-body);
+    background-repeat: no-repeat;
+    background-size:contain;
+
+}
+div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main.main {
+    width: 70rem;
+    height: 55rem;
+    border-radius: 1.2rem;
+    background-color: var(--bg-card-main);
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: 90px 1fr;
+    overflow:auto;
+}
+
+main.main::-webkit-scrollbar{
+    width: 18px;
+    border-radius: 10px;
+}
+main.main::-webkit-scrollbar-thumb {
+    background-color: var(--bg-scroll);
+    border-radius: 10px;
+    border-left: 4px solid var(--bg-card-main);
+    border-right: 4px solid var(--bg-card-main);
+}
+
+main.main::-webkit-scrollbar-track {
+    background:var(--bg-card-main);
+}
+
+
+img#star, h1#h1-faqs {
+    display: inline;
+    align-items: center;
+}
+
+h1#h1-faqs {
+    grid-row: 1;
+    grid-column: 1;
+    padding-left: 60px;
+    font-size: 5.2rem;
+}
+img#star {
+    grid-row: 1;
+    padding-top: 18px;
+    grid-column: 1;
+}
+
+li {
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding:20px 0 ;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+
+ul > p  {
+    border-bottom: 1px solid var(--bg-body);
+}
+p {
+    max-height: 100px;
+    transition: max-height 3s;
+    margin-bottom: 25px;
+}
+p.none {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.2s;
+}
+
+@media(max-width: 700px) {
+   main.main {
+    margin: 0px 40px;
+   }
+}
